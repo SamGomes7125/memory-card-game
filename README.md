@@ -21,3 +21,7 @@ A React-based memory card game built using hooks and data fetched from an extern
 ```bash
 npm install
 npm run dev
+
+## 🚀 Live Demo
+[https://memory-card-game.vercel.app](https://memory-card-game-two-bice.vercel.app/)
+
