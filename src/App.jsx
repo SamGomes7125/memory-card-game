@@ -7,6 +7,8 @@ function App() {
   const [clickedCards, setClickedCards] = useState([])
   const [score, setScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
+  const [message, setMessage] = useState("Click a card to start the game!")
+
 
   function shuffleCards(array) {
   return [...array].sort(() => Math.random() - 0.5)
@@ -17,11 +19,13 @@ function App() {
     // Game over
     setScore(0)
     setClickedCards([])
+    setMessage("Game Over! You clicked the same card. Try again 😄")
   } else {
     const newScore = score + 1
     setScore(newScore)
     setClickedCards([...clickedCards, id])
     setBestScore(Math.max(bestScore, newScore))
+    setMessage("Good choice! Keep going 🚀")
   }
 
   setCards(shuffleCards(cards))
@@ -50,7 +54,7 @@ function App() {
     <div>
       <h1>Memory Card Game</h1>
       <Scoreboard score={score} bestScore={bestScore} />
-
+      <p className="message">{message}</p>
       <div className="cards">
         {cards.map((card) => (
           <Card

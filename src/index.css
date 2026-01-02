@@ -26,3 +26,8 @@ body {
   width: 100px;
   height: 100px;
 }
+
+.message {
+  font-weight: bold;
+  margin: 1rem 0;
+}
